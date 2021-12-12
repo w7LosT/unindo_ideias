@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { Home } from './templates/Home/index';
 import reportWebVitals from './reportWebVitals';
+import { CounterContextProvider } from './contexts/CounterContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <CounterContextProvider>
+      <Home />
+    </CounterContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
