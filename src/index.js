@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import { Home } from './templates/Home/index';
+import { Abc } from './templates/Abc/index';
+import { Page404 } from './templates/Page404/index';
+import { Menu } from './templates/Menu/index';
 import reportWebVitals from './reportWebVitals';
 import { CounterContextProvider } from './contexts/CounterContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <CounterContextProvider>
-      <Home />
+      <Menu components={{ home: <Home />, abc: <Abc />, page404: <Page404 /> }} />
     </CounterContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
